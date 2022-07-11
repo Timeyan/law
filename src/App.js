@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+ //import logo from './logo.svg';
+//import './App.css';
+import React, {useState} from 'react';
+import Counter from "./components/Counter";
+import ClassCounter from "./components/ClassCounter";
+import SearchAppBar from "./Styles/AppBar";
+ import PostItem from "./components/PostItem";
 
 function App() {
+    const [posts, setPosts] = useState();
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchAppBar/>
+        <PostItem post={{id: 2, title: 'Something', body: 'Description'}}/>
+      <Counter/>
+      <ClassCounter/>
+      <Counter/>
+      <ClassCounter/>
+      <Counter/>
     </div>
   );
 }
